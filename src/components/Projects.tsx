@@ -50,14 +50,12 @@ export default function Projects() {
               whileTap={{ scale: 0.95 }}
               className="group flex-none w-[calc(33.333%-16px)] min-w-[350px]"
             >
-              {/* 📱 TÍTULO MOBILE */}
+
               <h3 className="md:hidden text-blue-900 font-bold text-lg mb-2 text-left">
                 {p.title}
               </h3>
 
-              {/* 🖼️ IMAGEN + EFECTO */}
               <div className="relative">
-                {/* ✨ EFECTO SOLO EN IMAGEN */}
                 <motion.div
                   className="absolute inset-0 rounded-xl md:hidden pointer-events-none"
                   animate={{
@@ -81,7 +79,6 @@ export default function Projects() {
                   className="rounded-xl object-cover w-full h-[340px]"
                 />
 
-                {/* 💻 OVERLAY DESKTOP */}
                 <div className="hidden md:flex absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-xl flex-col justify-center items-center text-white p-4">
                   <h3 className="font-bold text-xl">{p.title}</h3>
                   <p className="text-sm mt-2">{p.desc}</p>
@@ -92,7 +89,6 @@ export default function Projects() {
         </motion.div>
       </div>
 
-      {/* 🔥 MODAL */}
       <AnimatePresence>
         {active && (
           <motion.div
@@ -109,7 +105,6 @@ export default function Projects() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
             >
-              {/* 🖼️ IMAGEN */}
               <Image
                 src={active.img}
                 alt={active.title}
@@ -118,7 +113,6 @@ export default function Projects() {
                 className="w-full h-60 object-cover"
               />
 
-              {/* 📄 CONTENIDO */}
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3 text-blue-900">
                   {active.title}
